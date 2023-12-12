@@ -10,7 +10,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerOptions = {
     swaggerDefinition: {
       info: {
-        title: 'Node.js CRUD operations',
+        title: 'CRUD operations Node.js & MongoDB',
         version: '1.0.0',
       },
       servers: [
