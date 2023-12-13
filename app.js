@@ -53,6 +53,7 @@ const swaggerOptions = {
   };
     
 const swaggerSpec = swaggerJSdoc(swaggerOptions)
+//app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 dotenv.config();
@@ -83,6 +84,11 @@ mongoose.connect(process.env.DB_CONNECT)
   })
   .catch(err => console.error("Error connecting to MongoDB:", err));
 
+//go to swagger ui
+app.get('/', (req, res) => {
+    //res.send("hallo world")
+    res.redirect('/api-docs');
+})
 
 // Add a new game
 /**
